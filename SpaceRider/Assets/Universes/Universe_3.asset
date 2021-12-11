@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8346df6b53c705f44b7a33c01d1831f7, type: 3}
+  m_Name: Universe_3
+  m_EditorClassIdentifier: 
+  universeColor: {r: 0.111739054, g: 0.254717, b: 0.12439547, a: 1}
+  nebulaColor: {r: 0.7490196, g: 1, b: 0.83522063, a: 0.007843138}
+  starColor: {r: 0.7490196, g: 1, b: 0.8533462, a: 1}
+  ufoColor1: {r: 0.20392156, g: 1, b: 0.6320585, a: 1}
+  ufoColor2: {r: 0.16470586, g: 0.7176471, b: 0.39232105, a: 1}
+  ufoColor3: {r: 0.23921567, g: 0.8117647, b: 0.4715785, a: 1}
+  ufoColor4: {r: 0.16042219, g: 0.58431375, b: 0.10588233, a: 1}
+  shipColor1: {r: 0.11258456, g: 0.17048259, b: 0.20754719, a: 1}
+  shipColor2: {r: 0.11258456, g: 0.17048259, b: 0.20754719, a: 1}
+  shipColor3: {r: 0.11258456, g: 0.17048259, b: 0.20754719, a: 1}
+  shipColor4: {r: 0.11258456, g: 0.17048259, b: 0.20754719, a: 1}
+  meteorColor: {r: 0.2784314, g: 0.7058824, b: 0.43247524, a: 1}
