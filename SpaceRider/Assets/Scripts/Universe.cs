@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(fileName="Universe", menuName="Create new Universe", order=0)]
+
+//Saves the color-theme data of each universe
 public class Universe : ScriptableObject
 {
     [Header("Universe")]

@@ -31,6 +31,7 @@ public class LineDraw : MonoBehaviour
     {
         if (Input.GetKeyDown(createLineButton))
         {
+            
             //Delete Previous Line Before Making a new one
             if (previousLines.Count > 0)
             {
@@ -46,6 +47,8 @@ public class LineDraw : MonoBehaviour
         }
         if (Input.GetKey(createLineButton))
         {
+            //Play sound effect
+            FindObjectOfType<SoundEffects>().PlayLaserSoundEffect();
             if (currentLine)
             {
                 //Diff = Distance between previous line point and mouse position.

@@ -36,9 +36,9 @@ public class Line : MonoBehaviour
                 Destroy(gameObject);
             }
         }
-        
     }
 
+    //Smoothly delete line from start to end
     private void DeleteLine()
     {
         deleteTimer += Time.deltaTime;
@@ -55,11 +55,13 @@ public class Line : MonoBehaviour
         }
     }
 
+    //Start Dleleting line
     public void StartDeleting()
     {
         begin = true;
     }
 
+    //Delete line from end to start
     private void DeleteOnComand()
     {
         if(begin)
@@ -79,15 +81,21 @@ public class Line : MonoBehaviour
         }
     }
 
+    //Move to next index
     private bool MovePointTonext(LineRenderer line, int currentPointIndex, int nextPointIndex)
     {
+        //Calculate distance between current line point and next point
         float distance = Vector3.Distance(line.GetPosition(currentPointIndex), line.GetPosition(nextPointIndex));
+        //Move current point to next point position
         Vector3 nextPos = Vector3.MoveTowards(line.GetPosition(currentPointIndex), line.GetPosition(nextPointIndex), speed * Time.deltaTime);
+        //If distance between the points is greater than 0
         if (distance > 0)
         {
-            //Debug.Log(distance);
+            //Set current line point to next point position
             line.SetPosition(currentPointIndex, nextPos);
+            //Set points for the edge collider
             SetColliderPoints(currentPointIndex, nextPos);
+            //Set next position for every line point
             for (int i = 0; i < currentPointIndex; i++)
             {
                 line.SetPosition(i, line.GetPosition(currentPointIndex));
@@ -101,7 +109,7 @@ public class Line : MonoBehaviour
             return true;
         }
     }
-
+    //Oposite of MovePointTonext
     private bool MovePointToPrevious(LineRenderer line, int currentPointIndex, int previousPointIndex)
     {
         float distance = Vector3.Distance(line.GetPosition(currentPointIndex), line.GetPosition(previousPointIndex));
@@ -122,12 +130,16 @@ public class Line : MonoBehaviour
             return true;
         }
     }
-
+    //Set collider points
     private void SetColliderPoints(int index, Vector3 pos)
-    {
+    {   
+        //Get edge collider point count
         int pointCount = edgeCol.pointCount;
+        //Store collider points to a Vector2 array
         Vector2[] points = edgeCol.points;
+        //Set the position of selected [index] point
         points[index] = new Vector2(pos.x, pos.y);
+        //Set the edge collider points
         edgeCol.points = points;
     }
 }

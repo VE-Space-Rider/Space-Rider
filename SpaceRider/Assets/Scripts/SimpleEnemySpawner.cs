@@ -11,15 +11,9 @@ public class SimpleEnemySpawner : MonoBehaviour
     {
         StartCoroutine(Spawn());
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     IEnumerator Spawn()
     {
+        //Create an enemy every [spawnEverySeconds] seconds
         while(true)
         {
             Instantiate(enemyPrefab, transform.position, transform.rotation);

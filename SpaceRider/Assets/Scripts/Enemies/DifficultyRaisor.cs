@@ -32,6 +32,7 @@ public class DifficultyRaisor : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //Initialize values
         nextHarden = hardenEveryMeters;
 
         meteorSpawner = FindObjectOfType<MeteorSpawner>();
@@ -46,9 +47,12 @@ public class DifficultyRaisor : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //Get current score
         score = vechicle.GetComponent<ScoreCounter>().GetScore();
+        //If score is greater than the next harden point
         if(score >= nextHarden)
         {
+            //Upgrade values
             if(ufoSpawner.health < maxUfoHealth)
                 ufoSpawner.health += ufoHealthUpgrade;
             if(ufoSpawner.spawnEveryMeters > maxUfoSpawnMeters)

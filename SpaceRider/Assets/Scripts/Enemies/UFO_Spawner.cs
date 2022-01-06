@@ -29,9 +29,12 @@ public class UFO_Spawner : MonoBehaviour
 
     private void Update()
     {
+        //Get current score
         score = vechicle.GetComponent<ScoreCounter>().GetScore();
+        //Spawn enemies while score increases
         if(score >= nextSpawn)
         {
+            //Spawn enemy ufo and initialize its stats and set its color scheme
             GameObject ufo = Instantiate(ufoPrefab, transform.position, transform.rotation);
             ufo.GetComponent<Enemy>().health = health;
             ufo.GetComponent<UFO_Movement>().speed = speed;
@@ -39,6 +42,7 @@ public class UFO_Spawner : MonoBehaviour
             ufo.transform.GetChild(1).GetComponent<SpriteRenderer>().color = ufoColor2;
             ufo.transform.GetChild(2).GetComponent<SpriteRenderer>().color = ufoColor3;
             ufo.transform.GetChild(3).GetComponent<SpriteRenderer>().color = ufoColor4;
+            //Calculate next spawn
             nextSpawn += spawnEveryMeters;
         }
     }
